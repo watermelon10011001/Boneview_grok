@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "骨幕 Boneview",
+      "hasCanvas": false,
+      "bodyTextLen": 198,
+      "bodyTextHash": "046eb501e2b4a2ac87ed6608a211a266fc3839692d84774f3845d25f05fbb3dc",
+      "bodyTextPrefix": "Boneview Spine 三件套预览 运行时 自动 4.3 4.2 4.1 4.0 导入 三件套 导入 Spine 导出文件",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "骨幕 Boneview",
+      "hasCanvas": false,
+      "bodyTextLen": 189,
+      "bodyTextHash": "cd7f8bde4c0379a3965fedfc45b5b2880f78afca365a8f6c405dbb63506246fc",
+      "bodyTextPrefix": "Boneview Spine 三件套预览 运行时 自动 4.3 4.2 4.1 4.0 三件套 导入 Spine 导出文件 手机",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

@@ -1,0 +1,184 @@
+@import "tailwindcss";
+@import "@esotericsoftware/spine-player/dist/spine-player.css";
+
+@theme {
+  --font-sans: "Outfit", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-canvas: #0c0c0e;
+  --color-raised: #141417;
+  --color-panel: #1a1a1f;
+  --color-ink: #f2f2f4;
+  --color-mute: #9a9aa3;
+  --color-faint: #6e6e78;
+  --color-line: #2c2c34;
+  --color-steel: #c5cdd6;
+  --color-steel-ink: #0c0c0e;
+  --color-danger: #d8897f;
+  --color-ok: #7dba98;
+  --color-paper: #f4f4f5;
+  --color-ash: #3f3f46;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --shadow-border: 0 0 0 1px color-mix(in oklab, var(--color-ink) 8%, transparent);
+  --shadow-border-left: inset 1px 0 0 color-mix(in oklab, var(--color-ink) 8%, transparent);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body {
+    height: 100%;
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    overscroll-behavior: none;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  * {
+    border-color: var(--color-line);
+  }
+}
+
+.stage-checker {
+  background-color: #101014;
+  background-image:
+    linear-gradient(45deg, #18181e 25%, transparent 25%),
+    linear-gradient(-45deg, #18181e 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #18181e 75%),
+    linear-gradient(-45deg, transparent 75%, #18181e 75%);
+  background-size: 20px 20px;
+  background-position:
+    0 0,
+    0 10px,
+    10px -10px,
+    -10px 0;
+}
+
+.safe-header {
+  padding-top: max(0.5rem, env(safe-area-inset-top));
+  box-shadow: 0 1px 0 color-mix(in oklab, var(--color-ink) 8%, transparent);
+}
+
+.safe-transport {
+  padding-bottom: max(0.625rem, env(safe-area-inset-bottom));
+  box-shadow: 0 -1px 0 color-mix(in oklab, var(--color-ink) 8%, transparent);
+}
+
+@media (min-width: 768px) {
+  .safe-transport {
+    padding-bottom: 0.625rem;
+  }
+}
+
+.inspector-dock {
+  height: 30vh;
+  min-height: 11rem;
+  flex-shrink: 0;
+  box-shadow: 0 -1px 0 color-mix(in oklab, var(--color-ink) 8%, transparent);
+  transition: height 250ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.inspector-dock.is-peek {
+  height: 3.5rem;
+  min-height: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .inspector-dock,
+  .inspector-dock.is-peek {
+    height: auto;
+    width: 20rem;
+    min-height: 0;
+    box-shadow: inset 1px 0 0 color-mix(in oklab, var(--color-ink) 8%, transparent);
+    transition: none;
+  }
+}
+
+.spine-player {
+  background: transparent !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.spine-player canvas {
+  border-radius: 0 !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.spine-player-controls {
+  display: none !important;
+}
+
+.spine-player-error {
+  font-family: var(--font-sans) !important;
+  font-size: 0.8125rem !important;
+  line-height: 1.5 !important;
+  color: var(--color-ink) !important;
+  background: color-mix(in oklab, var(--color-canvas) 88%, transparent) !important;
+  padding: 16px !important;
+}
+
+input[type="range"].scrub {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 18px;
+  background: transparent;
+}
+
+input[type="range"].scrub::-webkit-slider-runnable-track {
+  height: 3px;
+  background: color-mix(in oklab, var(--color-ink) 16%, transparent);
+  border-radius: 99px;
+}
+
+input[type="range"].scrub::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  margin-top: -5.5px;
+  border-radius: 99px;
+  background: var(--color-steel);
+  border: 0;
+}
+
+input[type="range"].scrub::-moz-range-track {
+  height: 3px;
+  background: color-mix(in oklab, var(--color-ink) 16%, transparent);
+  border-radius: 99px;
+}
+
+input[type="range"].scrub::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 99px;
+  background: var(--color-steel);
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
