@@ -1,9 +1,10 @@
 [build]
   command = "npm run build"
-  publish = ".output/public"   # 如果你实际构建输出是 dist，则改为 "dist"
+  publish = "dist/client"   # Nitro 的 netlify 预设通常输出到 dist/client
+  # 如果构建后是 .output/public，就改成 .output/public，但建议先用 dist/client
 
 [functions]
-  directory = ".output/server"
+  directory = "dist/server" # 或 .output/server，根据实际调整
 
 [[redirects]]
   from = "/api/*"
