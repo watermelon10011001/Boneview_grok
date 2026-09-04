@@ -1,0 +1,6 @@
+Spineboy demo assets are official Spine example files from
+Esoteric Software (spine-runtimes / examples / spineboy).
+
+Spine Runtimes © Esoteric Software LLC.
+Each user of products integrating the Spine Runtimes must obtain
+their own Spine Editor license.
